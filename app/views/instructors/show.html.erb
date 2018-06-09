@@ -1,0 +1,13 @@
+<h3>Instructor</h3>
+
+<div>Firstname: <%= @instructor.first_name %></div>
+<div>Lastname: <%= @instructor.last_name %></div>
+<div>DOB: <%= @instructor.birthday %></div>
+<div>Highest Education: <%= @instructor.highest_education %></div>
+
+
+<div>Created at: <%= @instructor.created_at %></div>
+
+<div>Updated at: <%= @instructor.updated_at %></div>
+
+<%= link_to 'Return to Instructors', instructors_path %>

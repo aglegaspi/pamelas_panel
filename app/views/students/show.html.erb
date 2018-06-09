@@ -1,0 +1,13 @@
+<h3>Student</h3>
+
+<div>Firstname: <%= @student.first_name %></div>
+<div>Lastname: <%= @student.last_name %></div>
+<div>DOB: <%= @student.birthday %></div>
+<div>Highest Education: <%= @student.highest_education %></div>
+
+
+<div>Created at: <%= @student.created_at %></div>
+
+<div>Updated at: <%= @student.updated_at %></div>
+
+<%= link_to 'Return to Students', students_path %>

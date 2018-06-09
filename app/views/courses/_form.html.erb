@@ -1,0 +1,18 @@
+<!-- you have form_for an instance of a resource -->
+<%= form_for @course do |f| %>
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>
+        <%= f.label :total_hours %>
+        <%= f.number_field :total_hours %>
+    </div>
+
+    <div>   
+        <%= f.submit %>
+    </div>
+
+<% end %>

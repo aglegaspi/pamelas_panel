@@ -1,0 +1,19 @@
+<h1>School Panel - Cohort</h1>
+
+<div>
+<%= link_to 'Add New Cohort', new_cohort_path %>
+</div>
+
+<div>
+<% @cohorts.each do |display_cohort| %>
+    <p>
+    <div>Course Name: <%= display_cohort.name %></div>
+
+    <div>
+    <%= link_to 'View', cohort_path(display_cohort), 'data-disable-with': 'Hold Up!'%>
+     <%= link_to 'Edit', edit_cohort_path(display_cohort), 'data-disable-with': 'One Sec!' %> 
+     <%= link_to 'Delete', cohort_path(display_cohort), 'data-method': 'DELETE'%>
+    </div>
+    </p>
+<% end %>    
+</div>

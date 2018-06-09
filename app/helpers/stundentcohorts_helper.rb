@@ -1,0 +1,2 @@
+module StundentcohortsHelper
+end

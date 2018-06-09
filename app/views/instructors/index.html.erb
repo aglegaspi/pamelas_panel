@@ -1,0 +1,20 @@
+<h1>School Panel - Instructors</h1>
+
+<div>
+<%= link_to 'Add New Instructor', new_instructor_path %>
+</div>
+
+<div>
+<% @instructors.each do |display_instructor| %>
+    <p>
+    <div>Firstname: <%= display_instructor.first_name %></div>
+    <div>Lastname: <%= display_instructor.last_name %></div>
+
+    <div>
+    <%= link_to 'View', instructor_path(display_instructor), 'data-disable-with': 'Hold Up!'%>
+     <%= link_to 'Edit', edit_instructor_path(display_instructor), 'data-disable-with': 'One Sec!' %> 
+     <%= link_to 'Delete', instructor_path(display_instructor), 'data-method': 'DELETE'%>
+    </div>
+    </p>
+<% end %>    
+</div>

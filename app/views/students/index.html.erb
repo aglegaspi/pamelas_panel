@@ -1,0 +1,20 @@
+<h1>School Panel - Students</h1>
+
+<div>
+<%= link_to 'Add New Student', new_student_path %>
+</div>
+
+<div>
+<% @students.each do |display_student| %>
+    <p>
+    <div>Firstname: <%= display_student.first_name %></div>
+    <div>Lastname: <%= display_student.last_name %></div>
+
+    <div>
+    <%= link_to 'View', student_path(display_student), 'data-disable-with': 'Hold Up!'%>
+     <%= link_to 'Edit', edit_student_path(display_student), 'data-disable-with': 'One Sec!' %> 
+     <%= link_to 'Delete', student_path(display_student), 'data-method': 'DELETE'%>
+    </div>
+    </p>
+<% end %>    
+</div>

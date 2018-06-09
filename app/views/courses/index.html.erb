@@ -1,0 +1,19 @@
+<h1>School Panel - Courses</h1>
+
+<div>
+<%= link_to 'Add New Course', new_course_path %>
+</div>
+
+<div>
+<% @courses.each do |display_course| %>
+    <p>
+    <div>Course Name: <%= display_course.name %></div>
+
+    <div>
+    <%= link_to 'View', course_path(display_course), 'data-disable-with': 'Hold Up!'%>
+     <%= link_to 'Edit', edit_course_path(display_course), 'data-disable-with': 'One Sec!' %> 
+     <%= link_to 'Delete', course_path(display_course), 'data-method': 'DELETE'%>
+    </div>
+    </p>
+<% end %>    
+</div>
