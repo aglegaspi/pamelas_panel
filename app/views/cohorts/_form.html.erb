@@ -18,8 +18,8 @@
 
     <div>   
         <%= f.label :instuctor_id %>
-        <%= f.select :instructor_id, Instructor.all.collect {|p| [ p.first_name, p.id ]}, { include_blank: true } %>
-    </div>
+        <%= f.select :instructor_id, options_for_select(instructors_for_select), :prompt => 'Select' %>
+        </div>
 
     <div>   
         <%= f.submit %>
