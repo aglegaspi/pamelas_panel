@@ -7,8 +7,8 @@
 <div>
 <% @courses.each do |display_course| %>
     <p>
-    <div>Course Name: <%= display_course.name %></div>
-
+    <div>Course Name: <%= display_course.name %> [ <%= link_to 'Create A New Cohort', new_course_cohort_path(display_course) %> ]</div>
+    
     <div>
     <%= link_to 'View', course_path(display_course), 'data-disable-with': 'Hold Up!'%>
      <%= link_to 'Edit', edit_course_path(display_course), 'data-disable-with': 'One Sec!' %> 

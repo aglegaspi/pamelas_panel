@@ -1,5 +1,5 @@
 <!-- you have form_for an instance of a resource -->
-<%= form_for @cohort do |f| %>
+<%= form_for [@course, @cohort] do |f| %>
 
     <div>
         <%= f.label :name %>
