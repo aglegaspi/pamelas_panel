@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
-  resources :students
+  resources :students do
+    resources :student_cohorts, only: [:new, :create]
+  end
   resources :instructors
   resources :courses do
     resources :cohorts, only: [:new, :create]

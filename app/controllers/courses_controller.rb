@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
     def index
 
         @courses = Course.all
+        @cohorts = Cohort.all
     end
 
     def create

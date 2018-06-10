@@ -1,5 +1,4 @@
-<!-- you have form_for an instance of a resource -->
-<%= form_for [@course, @cohort] do |f| %>
+<%= form_for [@student, @stu_cohort] do |f| %>
 
     <div>
         <%= f.label :name %>
@@ -17,8 +16,8 @@
     </div>
 
     <div>   
-        <%= f.label :instuctor_id %>
-        <%= f.select :instructor_id, options_for_select(instructors_for_select), :prompt => 'Select' %>
+        <%= f.label :cohort_id %>
+        <%= f.select :cohort_id, options_for_select(cohorts_for_select), :prompt => 'Select' %>
     </div>
 
     <div>   

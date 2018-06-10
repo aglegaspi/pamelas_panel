@@ -11,6 +11,10 @@
     <div>Lastname: <%= display_student.last_name %></div>
 
     <div>
+
+    </div>
+        <%= link_to 'Add Student\'s Cohort', new_student_cohort_path %>
+    <div>
     <%= link_to 'View', student_path(display_student), 'data-disable-with': 'Hold Up!'%>
      <%= link_to 'Edit', edit_student_path(display_student), 'data-disable-with': 'One Sec!' %> 
      <%= link_to 'Delete', student_path(display_student), 'data-method': 'DELETE'%>
