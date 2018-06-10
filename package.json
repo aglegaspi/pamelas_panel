@@ -1,5 +1,10 @@
 {
   "name": "pamelas_panel",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jquery": "^3.3.1",
+    "sass": "^1.5.1",
+    "toastr": "^2.1.4"
+  }
 }
