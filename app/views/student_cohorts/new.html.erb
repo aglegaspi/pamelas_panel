@@ -1,0 +1,12 @@
+<%= form_for [@student, @stu_cohort] do |f| %>
+
+    <div>   
+        <%= f.label :cohort_id %>
+        <%= f.select :cohort_id, options_for_select(cohorts_for_select), :prompt => 'Select' %>
+    </div>
+
+    <div>   
+        <%= f.submit %>
+    </div>
+
+<% end %>
