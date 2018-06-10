@@ -11,7 +11,11 @@
     <div>Lastname: <%= display_student.last_name %></div>
 
     <div>
-
+        <% display_student.student_cohorts.each do |stu_cohort| %>
+            <div>
+            Cohort: <%= stu_cohort.cohort.name %>      
+            </div>
+        <% end %>
     </div>
         <%= link_to 'Add Student\'s Cohort', new_student_student_cohort_path(display_student) %>
     <div>
