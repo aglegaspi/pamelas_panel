@@ -1,24 +1,20 @@
 class CoursesController < ApplicationController
 
     def index
-
         @courses = Course.all
         @cohorts = Cohort.all
     end
 
     def create
-
         Course.create(course_params)
         redirect_to courses_path
     end
 
     def new
-
         @course = Course.new
     end
 
     def edit 
-
         @course = Course.find(params[:id])
     end
 
@@ -40,7 +36,7 @@ class CoursesController < ApplicationController
 
     private
     def course_params
- 
+
         params.require(:course).permit(:name,:total_hours)
     end
 

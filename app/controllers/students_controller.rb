@@ -1,7 +1,8 @@
 class StudentsController < ApplicationController
+    before_action :authenticate_admin!
 
     def index
-
+        @admin = current_admin
         @students = Student.all
     end
 
