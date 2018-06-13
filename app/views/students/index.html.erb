@@ -1,29 +1,39 @@
-<h1>School Panel - Students</h1>
+<h1>Students</h1>
 <h4> <%= @admin.email %> </h4>
 <div>
 <%= link_to 'Add New Student', new_student_path %>
 </div>
 
-<div>
-<% @students.each do |display_student| %>
-    <p>
-    <div>Firstname: <%= display_student.first_name %></div>
-    <div>Lastname: <%= display_student.last_name %></div>
 
-    <div>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Cohort</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @students.each do |display_student| %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= display_student.first_name %></td>
+      <td><%= display_student.last_name %></td>
+      <td>
         <% display_student.student_cohorts.each do |stu_cohort| %>
-            <div>
-            Cohort: <%= stu_cohort.cohort.name %>      
-            </div>
+        <%= stu_cohort.cohort.name %>      
         <% end %>
-    </div>
-        <%= link_to 'Add Student\'s Cohort', new_student_student_cohort_path(display_student) %>
-    <div>
-    <%= link_to 'View', student_path(display_student), 'data-disable-with': 'Hold Up!'%>
-     <%= link_to 'Edit', edit_student_path(display_student), 'data-disable-with': 'One Sec!' %> 
-     <%= link_to 'Delete', student_path(display_student), 'data-method': 'DELETE'%>
-     <%= link_to "Delete", student_path(display_student), method: :delete %>
-    </div>
-    </p>
-<% end %>    
-</div>
+      </td>
+      <td>
+        [ <%= link_to 'Add Cohort', new_student_student_cohort_path(display_student)%> ] 
+        [ <%= link_to 'View', student_path(display_student), 'data-disable-with': 'Hold Up!'%> ] 
+        [ <%= link_to 'Edit', edit_student_path(display_student), 'data-disable-with': 'One Sec!' %> ]
+        [ <%= link_to "Delete", student_path(display_student), method: :delete %> ]
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+

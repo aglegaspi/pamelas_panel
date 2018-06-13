@@ -14,6 +14,8 @@ gem 'puma', '~> 3.11'
 gem 'devise'
 # for user auth
 
+gem "activestorage"
+
 gem "azure-storage", require: false
 #for file/img uploading
 

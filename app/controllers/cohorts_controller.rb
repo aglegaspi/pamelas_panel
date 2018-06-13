@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
-
+    before_action :authenticate_admin!
+    
     def create
         @course = Course.find(params[:course_id])
         @course.cohorts.create(cohort_params)
