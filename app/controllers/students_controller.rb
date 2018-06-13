@@ -8,8 +8,21 @@ class StudentsController < ApplicationController
 
     def create
 
-        Student.create(student_params)
-        redirect_to students_path
+        @student = Student.create(student_params)
+
+        if my_student.valid?
+            flash[:success] = 'The student has been added'
+            redirect_to students_path
+            #redirect when successful
+        end
+
+        if my_student.invalid?
+            flash[:error] = 'You are missing information chile!'
+            render :new
+            #render when unsuccesful and input missing
+        end
+
+        
     end
 
     def new
