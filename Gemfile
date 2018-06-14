@@ -11,6 +11,9 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 
+gem 'bootstrap-modal-rails'
+# use for models in rails
+
 gem 'devise'
 # for user auth
 

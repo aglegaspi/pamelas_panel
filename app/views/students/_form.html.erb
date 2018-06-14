@@ -1,36 +1,27 @@
-<% if @student.errors.any? %>
-    <ul>
-        <% @student.errors.full_messages.each do |error_message| %>
-            <li> <%%= error_message %> </li>
-        <% end %>
-    </ul>
-<% end %>
+        <%= form_for @student do |f| %>
 
-<%= form_for @student do |f| %>
+                <div>
+                    <%= f.label :first_name %>
+                    <%= f.text_field :first_name, class: 'form-control' %>
+                </div>
 
-    <div>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
-    </div>
+                <div>
+                    <%= f.label :last_name %>
+                    <%= f.text_field :last_name, class: 'form-control' %>
+                </div>
 
-    <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-    </div>
+                <div>   
+                    <%= f.label :birthday %>
+                    <%= f.date_field :birthday, class: 'form-control' %>
+                </div>
 
-    <div>   
-        <%= f.label :birthday %>
-        <%= f.date_field :birthday %>
-    </div>
+                <div>   
+                    <%= f.label :highest_education %>
+                    <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), {}, class: "form-control" %>
+                </div>
+                    <br>
+                <div>   
+                    <%= f.submit "Submit", class: 'btn btn-light' %>
+                </div>
 
-    <div>   
-        <%= f.label :highest_education %>
-        <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), prompt: 'Select One' %>
-
-    </div>
-
-    <div>   
-        <%= f.submit %>
-    </div>
-
-<% end %>
+            <% end %>

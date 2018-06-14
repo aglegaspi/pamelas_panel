@@ -6,6 +6,7 @@
     "bootstrap": "4.1.1",
     "jquery": "^3.3.1",
     "sass": "^1.5.1",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "vue-instant-bootstrap-modal": "^1.0.1"
   }
 }

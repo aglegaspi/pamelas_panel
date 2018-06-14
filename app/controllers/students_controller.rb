@@ -1,25 +1,25 @@
 class StudentsController < ApplicationController
     before_action :authenticate_admin!
+    skip_before_action :verify_authenticity_token, only: [:destroy]
 
     def index
         @admin = current_admin
         @students = Student.all
     end
 
-    def create
+    def create    
 
         @student = Student.create(student_params)
 
-        if my_student.valid?
+        if @student.valid?
             flash[:success] = 'The student has been added'
             redirect_to students_path
-            #redirect when successful
         end
+    
 
-        if my_student.invalid?
+        if @student.invalid?
             flash[:error] = 'You are missing information chile!'
             render :new
-            #render when unsuccesful and input missing
         end
 
         
@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
     def new
 
         @student = Student.new
+        
     end
 
     def edit 
@@ -48,7 +49,9 @@ class StudentsController < ApplicationController
 
     def destroy
         Student.destroy(params[:id])
-        redirect_to students_path
+        # we are responding with to the delete with jason
+        render json: {status: 'success', message: 'student was removed!'}
+            
     end
 
     private
