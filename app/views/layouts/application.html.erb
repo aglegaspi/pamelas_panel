@@ -60,6 +60,22 @@
             <%= link_to image_tag('icons/icons8-airplane_take_off.png') + ' Logout', destroy_admin_session_path, method: 'DELETE', class: 'nav-link' %>
           </li>
 
+          <% else %>
+
+            <li class="nav-item active">
+            <a class="nav-link" href="<%= new_admin_registration_path %>">
+            <%= image_tag "icons/icons8-hand_with_pen.png" %>
+            Sign Up
+            </a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= new_admin_session_path %>">
+            <%= image_tag "icons/icons8-id_verified.png" %>
+            Log In
+            </a>
+          </li>
+
       <% end %>
 
         </li>

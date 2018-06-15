@@ -2,26 +2,26 @@
 
     <div>
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: 'form-control' %>
     </div>
 
     <div>
         <%= f.label :start_date %>
-        <%= f.date_field :start_date %>
+        <%= f.date_field :start_date, class: 'form-control' %>
     </div>
 
     <div>
         <%= f.label :end_date %>
-        <%= f.date_field :end_date %>
+        <%= f.date_field :end_date, class: 'form-control' %>
     </div>
 
     <div>   
         <%= f.label :instuctor_id %>
-        <%= f.select :instructor_id, options_for_select(instructors_for_select), :prompt => 'Select' %>
+        <%= f.select :instructor_id, options_for_select(instructors_for_select), {prompt: ' '}, class: "form-control"  %>
     </div>
-
+    <br>
     <div>   
-        <%= f.submit %>
+        <%= f.submit "Submit", class: 'btn btn-light' %>
     </div>
 
 <% end %>

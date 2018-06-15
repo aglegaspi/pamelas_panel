@@ -26,6 +26,9 @@
         <% end %>    
       </td>
       <td>
+        <%= link_to new_course_cohort_path(display_course), :method => "get", class: "small_button" do  %>
+          <button>Add Cohort</button>
+        <% end %>
 
         <%= link_to course_path(display_course), :method => "get", class: "small_button" do %>
           <button>View</button>

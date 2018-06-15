@@ -1,18 +1,17 @@
-<!-- you have form_for an instance of a resource -->
 <%= form_for @course do |f| %>
 
     <div>
-        <%= f.label :name %>
+        <%= f.label :name, 'Name of New Course' %>
         <%= f.text_field :name %>
     </div>
 
     <div>
-        <%= f.label :total_hours %>
-        <%= f.number_field :total_hours %>
-    </div>
-
+        <%= f.label :total_hours, "Total Hours of Course" %>
+        <%= f.number_field :total_hours, class: 'form-control' %>
+    </div>    
+    <br>
     <div>   
-        <%= f.submit %>
+        <%= f.submit "Submit", class: 'btn btn-light' %>
     </div>
 
 <% end %>

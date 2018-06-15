@@ -1,12 +1,22 @@
-<%= form_for [@student, @stu_cohort] do |f| %>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+    
+        <div class="col-md-6">
+            <br>
+            <h3>Add Cohort</h3>
 
-    <div>   
-        <%= f.label :cohort_id %>
-        <%= f.select :cohort_id, options_for_select(cohorts_for_select), :prompt => 'Select' %>
+            <%= form_for [@student, @stu_cohort] do |f| %>
+
+                <div>   
+                    
+                    <%= f.select :cohort_id, options_for_select(cohorts_for_select), {prompt: ' '}, class: "form-control" %>
+                </div>
+                <br>
+                <div>   
+                    <%= f.submit "Submit", class: 'btn btn-light' %>
+                </div>
+
+            <% end %>
+
     </div>
-
-    <div>   
-        <%= f.submit %>
-    </div>
-
-<% end %>
+</div>
