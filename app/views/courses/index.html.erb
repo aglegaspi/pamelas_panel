@@ -1,26 +1,47 @@
-<h1>School Panel - Courses</h1>
+<h1>Courses</h1>
 
 <div>
-<%= link_to 'Add New Course', new_course_path %>
+<%= link_to image_tag('icons/icons8-add_property.png') + " Add Course", new_course_path, class: "btn" %>
 </div>
 
-<div>
-<% @courses.each do |display_course| %>
-    <p>
-    <div>Course Name: <%= display_course.name %> [ <%= link_to 'Create A New Cohort', new_course_cohort_path(display_course) %> ]</div>
-    
-    
-    <% display_course.cohorts.each do |cohort| %>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Name</th>
+      <th scope="col">Cohort(s)</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @courses.each do |display_course| %>
+    <tr class="main-course">
+      <td> <%= image_tag "icons/icons8-reading_ebook.png" %> </td>
+      <td><%= display_course.name %></td>
+      <td>
+        <% display_course.cohorts.each do |cohort| %>
         <div>
-        Cohort: <%= cohort.name %>      
+        <%= cohort.name %>      
         </div>
-    <% end %>
+        <% end %>    
+      </td>
+      <td>
 
-    <div>
-    <%= link_to 'View', course_path(display_course), 'data-disable-with': 'Hold Up!'%>
-     <%= link_to 'Edit', edit_course_path(display_course), 'data-disable-with': 'One Sec!' %> 
-     <%= link_to 'Delete', course_path(display_course), 'data-method': 'DELETE'%>
-    </div>
-    </p>
-<% end %>    
-</div>
+        <%= link_to course_path(display_course), :method => "get", class: "small_button" do %>
+          <button>View</button>
+        <% end %>
+
+        <%= link_to edit_course_path(display_course), :method => "get", class: "small_button" do %>
+          <button>Edit</button>
+        <% end %>
+
+        <%= link_to course_path(display_course), :method => "delete", :remote => "true", class: "delete-course small_button" do %>
+          <button>Delete</button>
+        <% end %>
+         
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+

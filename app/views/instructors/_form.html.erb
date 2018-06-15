@@ -1,33 +1,36 @@
-<!-- you have form_for an instance of a resource -->
-<%= form_for @instructor do |f| %>
 
-    <div>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
-    </div>
 
-    <div>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-    </div>
 
-    <div>   
-        <%= f.label :birthday %>
-        <%= f.date_field :birthday %>
-    </div>
+        <%= form_for @instructor do |f| %>
 
-    <div>
-    <%= f.label :salary %>
-    <%= f.number_field :salary %>
-    </div>
+                <div>
+                    <%= f.label :first_name, 'First Name' %>
+                    <%= f.text_field :first_name, class: 'form-control' %>
+                </div>
+                
+                <div>
+                    <%= f.label :last_name, 'Last Name' %>
+                    <%= f.text_field :last_name, class: 'form-control' %>
+                </div>
 
-    <div>   
-        <%= f.label :highest_education %>
-        <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), prompt: 'Select One' %>
-    </div>
+                <div>   
+                    <%= f.label :birthday, 'Date of Birth' %>
+                    <%= f.date_field :birthday, class: 'form-control' %>
+                </div>
 
-    <div>   
-        <%= f.submit %>
-    </div>
+                <div>   
+                    <%= f.label :highest_education, 'Highest Education' %>
+                    <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), {prompt: ' '}, class: "form-control" %>
+                </div>
 
-<% end %>
+                 <div>
+                    <%= f.label :salary %>
+                    <%= f.number_field :salary, class: 'form-control' %>
+                 </div>
+
+                    <br>
+                <div>   
+                    <%= f.submit "Submit", class: 'btn btn-light' %>
+                </div>
+
+            <% end %>

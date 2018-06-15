@@ -8,12 +8,18 @@ Rails.application.routes.draw do
 
   root :to => 'home#index'
 
+  # this rources has a nested resource(join table) with limited views
   resources :students do
     resources :student_cohorts, only: [:new, :create]
   end
+
   resources :instructors
+
+  # this rources has a nested resource with limited views
   resources :courses do
     resources :cohorts, only: [:new, :create]
   end
   
+  # this resource is only displaying the index 
+  resources :dashboard, only: [:index]
 end

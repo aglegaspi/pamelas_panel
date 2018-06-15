@@ -1,13 +1,30 @@
-<h3>Instructor</h3>
-
-<div>Firstname: <%= @instructor.first_name %></div>
-<div>Lastname: <%= @instructor.last_name %></div>
-<div>DOB: <%= @instructor.birthday %></div>
-<div>Highest Education: <%= @instructor.highest_education %></div>
 
 
-<div>Created at: <%= @instructor.created_at %></div>
+<h3>Instructor Information</h3>
 
-<div>Updated at: <%= @instructor.updated_at %></div>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Highest Education</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Created</th>
+      <th scope="col">Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @instructor.first_name %></td>
+      <td><%= @instructor.last_name %></td>
+      <td><%= @instructor.birthday %></td>
+      <td><%= @instructor.highest_education %></td>
+      <td><%= @instructor.salary %></td>
+      <td><%= @instructor.created_at %></td>
+      <td><%= @instructor.updated_at %></td>
+     </tr>
+  </tbody>
+</table>
 
 <%= link_to 'Return to Instructors', instructors_path %>

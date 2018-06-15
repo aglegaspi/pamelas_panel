@@ -1,23 +1,23 @@
         <%= form_for @student do |f| %>
 
                 <div>
-                    <%= f.label :first_name %>
+                    <%= f.label :first_name, 'First Name' %>
                     <%= f.text_field :first_name, class: 'form-control' %>
                 </div>
-
+                
                 <div>
-                    <%= f.label :last_name %>
+                    <%= f.label :last_name, 'Last Name' %>
                     <%= f.text_field :last_name, class: 'form-control' %>
                 </div>
 
                 <div>   
-                    <%= f.label :birthday %>
+                    <%= f.label :birthday, 'Date of Birth' %>
                     <%= f.date_field :birthday, class: 'form-control' %>
                 </div>
 
                 <div>   
-                    <%= f.label :highest_education %>
-                    <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), {}, class: "form-control" %>
+                    <%= f.label :highest_education, 'Highest Education' %>
+                    <%= f.select :highest_education, options_for_select(['HS', 'College', 'Masters', 'PHD']), {prompt: ' '}, class: "form-control" %>
                 </div>
                     <br>
                 <div>   
