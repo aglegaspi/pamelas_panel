@@ -56,6 +56,13 @@
             </a>
           </li>
 
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= cohorts_path %>">
+            <%= image_tag "icons/icons8-google_classroom.png" %>
+            Cohorts
+            </a>
+          </li>
+
           <li class="nav-item active pull-right">
             <%= link_to image_tag('icons/icons8-airplane_take_off.png') + ' Logout', destroy_admin_session_path, method: 'DELETE', class: 'nav-link' %>
           </li>

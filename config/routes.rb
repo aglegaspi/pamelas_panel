@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :courses do
     resources :cohorts, only: [:new, :create]
   end
+
+  resources :cohorts, only: [:index, :destroy]
   
   # this resource is only displaying the index 
   resources :dashboard, only: [:index]

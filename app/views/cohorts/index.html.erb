@@ -1,0 +1,28 @@
+<h1>Cohorts</h1>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cohorts.each do |cohort| %>
+    <tr class="main-cohort">
+      <td> <%= image_tag "icons/icons8-reading_ebook.png" %> </td>
+      <td><%= cohort.name %></td>
+      <td><%= cohort.name %></td>
+      <td>
+
+        <%= link_to cohort_path(cohort), :method => "delete", :remote => "true", class: "delete-cohort small_button" do %>
+          <button>Delete</button>
+        <% end %>
+
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
