@@ -12,6 +12,7 @@
       <th scope="col"> </th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
+      <th scope="col">Cohort(s)</th>
       <th scope="col">Options</th>
     </tr>
   </thead>
@@ -21,6 +22,13 @@
       <td> <%= image_tag "icons/icons8-reading_ebook.png" %> </td>
       <td><%= display_instructor.first_name %></td>
       <td><%= display_instructor.last_name %></td>
+      <td>
+        <% display_instructor.cohorts.each do |cohort| %>
+        <div>
+        <%= cohort.name %>      
+        </div>
+        <% end %> 
+      </td>
       <td>
         <%= link_to instructor_path(display_instructor), :method => "get", class: "small_button" do %>
           <button>View</button>
