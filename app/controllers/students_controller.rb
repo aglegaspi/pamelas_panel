@@ -50,8 +50,7 @@ class StudentsController < ApplicationController
     def destroy
         Student.destroy(params[:id])
         # we are responding with to the delete with jason
-        render json: {status: 'success', message: 'student was removed!'}
-            
+        render json: {status: 'success', message: 'student was removed!'}  
     end
 
     private
