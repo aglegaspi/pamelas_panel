@@ -18,6 +18,10 @@ class CohortsController < ApplicationController
         @cohort = Cohort.new
     end
 
+    def show
+        @course = Course.find(params[:course_id])
+    end
+
     def destroy
         Cohort.destroy(params[:id])
         # we are responding with to the delete with jason
