@@ -19,7 +19,7 @@ class CohortsController < ApplicationController
     end
 
     def show
-        @course = Course.find(params[:course_id])
+        @cohort = Cohort.find(params[:id])
     end
 
     def destroy

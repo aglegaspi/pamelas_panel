@@ -1,0 +1,29 @@
+<h1>Students in <%= @cohort.name %></h1>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cohort.students.each do |student| %>
+    <tr class="mystudent">
+      <td> <%= image_tag "icons/icons8-reading_ebook.png" %> </td>
+      <td><%= student.first_name %></td>
+      <td><%= student.last_name %></td>
+      <td>
+        <%# given this path we have to give it an instance of studentcohort. which we find by
+                    the cohort id and student id %>
+        <%= link_to student_cohort_path(StudentCohort.find_by(cohort_id: @cohort.id, student_id: student.id)), :method => "delete", :remote => "true", class: "remove-student small_button" do %>
+          <button>Remove Student</button>
+        <% end %>
+      </td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+

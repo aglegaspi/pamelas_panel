@@ -1,6 +1,7 @@
 class StudentCohort < ApplicationRecord
+    #this allows the method .student to be callin in the instance.
     belongs_to :student 
+    #this allows the method .cohort to be callin in the instance.
     belongs_to :cohort
-    has_many :students, through: :student_cohorts
-    has_many :cohorts, through: :student_cohorts
+    
 end

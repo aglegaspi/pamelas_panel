@@ -16,6 +16,9 @@
       <td><%= cohort.name %></td>
       <td><%= cohort.course.name %></td>
       <td>
+        <%= link_to cohort_path(cohort), class: "small_button" do %>
+          <button>View Students</button>
+        <% end %>
 
         <%= link_to cohort_path(cohort), :method => "delete", :remote => "true", class: "delete-cohort small_button" do %>
           <button>Delete</button>

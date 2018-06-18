@@ -1,5 +1,6 @@
 class StudentCohortsController < ApplicationController
     before_action :authenticate_admin!
+    skip_before_action :verify_authenticity_token, only: [:destroy]
     
     def create
 
@@ -12,6 +13,12 @@ class StudentCohortsController < ApplicationController
     def new
         @student = Student.find(params[:student_id])
         @stu_cohort = StudentCohort.new
+    end
+
+    def destroy
+        StudentCohort.destroy(params[:id])
+        # we are responding with to the delete with jason
+        render json: {status: 'success', message: 'Student was removed!'}
     end
 
     private

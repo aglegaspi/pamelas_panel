@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :student_cohorts, only: [:new, :create]
   end
 
+  resources :student_cohorts, only: [:destroy]
   resources :instructors
 
   # this rources has a nested resource with limited views
