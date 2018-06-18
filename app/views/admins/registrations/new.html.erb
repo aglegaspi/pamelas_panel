@@ -36,10 +36,10 @@
                 <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
               </div>
 
-                <div class="field">
-                <%= f.label :admin_profile %><br />
-                <%= f.file_field :admin_profile %>
-              </div>
+              <%# <div class="field">
+                <%= f.label :admin_profile %>
+              <%#   <%= f.file_field :admin_profile %>
+              <%# </div> %>
               <br>
               <div class="actions">
                 <%= f.submit "Sign up", class: 'btn btn-light' %>
